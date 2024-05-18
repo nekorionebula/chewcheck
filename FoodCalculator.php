@@ -43,24 +43,3 @@ class FoodCalculator {
         } return $calories;
     }
 }
-
-//make the object and try it
-$calculator = new FoodCalculator('calories.csv');
-$result = $calculator -> getFoodOptions();
-var_dump($result);
-
-$totalCalories = $calculator -> calculateCalories("Canned Apricots", 100);
-echo "$totalCalories \n";
-
-$totalCalories = $calculator -> calculateCalories("Avocado", 50);
-echo "Total calories for Avocado is $totalCalories \n";
-
-
-$food = "Avocado";
-$amount = 100;
-$totalCalories = $calculator -> calculateCalories($food, $amount);
-echo "Total calories for $amount gram(s) of $food is $totalCalories \n";
-
-
-
-/* I'll connect this logic to my index later */
