@@ -29,8 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>chewcheck</title>
+    <link rel="stylesheet" href="styles/styles.css"> 
 </head>
 <body>
+
+<div class = "container">
 <h2>Chew Check</h2>
 <form method="post">
     <label for="food">Makanan: </label>
@@ -50,6 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" value="Hitung Kalori">
 </form>
 <p><?= $result?></p>
+<div class = "links">
+    <a href="https://github.com/nekorionebula"><img src="assets/github-mark-white.svg" alt="GitHub" class="github"></a>
+</div>
+</div>
+
 
 </body>
 </html>
