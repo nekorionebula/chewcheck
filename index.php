@@ -2,7 +2,7 @@
 require_once 'FoodCalculator.php';
 
 //make an object
-$calculator = new FoodCalculator('calories.csv');
+$calculator = new FoodCalculator('.data/calories.csv');
 $result = '';
 
 //http server's method  is post
