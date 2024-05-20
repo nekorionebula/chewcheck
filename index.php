@@ -12,9 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $amount = $_POST['amount'] ?? 0;
     if ($food && $amount > 0) {
         $totalCalories = $calculator -> calculateCalories($food, $amount);
-        $result = "Total calories for $amount grams of $food is $totalCalories calories.";
+        $result = "Total calories for ".$totalCalories['amount']. " of $food is " .$totalCalories['calories']. " calories.";
     }else {
-        $result = "Please select a food and enter the amount in grams.";
+        $result = "Please select a food and enter the amount in grams/ml.";
     }
 }
 ?>
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class = "container">
 <h2>Chew Check</h2>
 <form method="post">
-    <label for="food">Makanan: </label>
+    <label for="food">Food: </label>
     <select name="food" id="food">
         <option value="">Select food</option>
         <?php
@@ -47,10 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
     </select>
     <br>
-    <label for="amount">Grams: </label>
+    <label for="amount">Amount (gr/ml): </label>
     <input type="number" name="amount" id="amount" min="1" step="1">
     <br>
-    <input type="submit" value="Hitung Kalori">
+    <input type="submit" value="Calculate">
 </form>
 <p><?= $result?></p>
 <div class = "links">

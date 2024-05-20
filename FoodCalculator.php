@@ -2,7 +2,7 @@
 
 //make a class
 class FoodCalculator {
-    private $csvFile; //encapsulation and the csvFile won't be accessed in another class
+    private $csvFile; //encapsulation to ensure the csvFile is not accessed outside the class
 
     //make a constructor
     public function __construct($csvFile) {
@@ -35,11 +35,17 @@ class FoodCalculator {
                 if ($row[1] === $food) {
                     $caloriesPer100grams = (float)$row[3];
                     $calories = ($caloriesPer100grams/100) * $amount;
+                    if ($row[5] == "Food") {
+                        $amount = "$amount gr";
+                    }else {
+                        $amount = "$amount ml";
+                    }
                     break;
                 }
 
             }
             fclose($file);
-        } return $calories;
+            // to add kind  I use array to return. any idea instead of this?
+        }  return ["calories" => $calories, "amount" => $amount];
     }
 }
